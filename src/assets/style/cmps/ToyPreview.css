@@ -1,0 +1,36 @@
+.toy-preview {
+  text-align: center;
+}
+
+.toy-preview img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background-color: var(--clr1bg);
+  border-radius: 50%;
+}
+
+.toy-preview h3 {
+  margin-block: .3em;
+}
+
+.toy-preview p {
+  margin: 0 0 .3em;
+}
+
+.toy-preview .price {
+  font-weight: bold;
+  color: var(--clr1);
+}
+
+.toy-preview .stock {
+  font-size: .85em;
+}
+
+.toy-preview .stock.in {
+  color: green;
+}
+
+.toy-preview .stock.out {
+  color: var(--clr2);
+}

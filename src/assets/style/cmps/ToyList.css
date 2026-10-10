@@ -1,0 +1,27 @@
+.toy-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1em;
+}
+
+.toy-list > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: var(--radius);
+  padding: 1em;
+  box-shadow: 0 1px 4px rgb(0 0 0 / .08);
+}
+
+.toy-list .toy-actions {
+  display: flex;
+  gap: .4em;
+  flex-wrap: wrap;
+  margin-block-start: .5em;
+}
+
+.toy-list .toy-actions .btn {
+  font-size: .85em;
+  padding: .35em .7em;
+}
