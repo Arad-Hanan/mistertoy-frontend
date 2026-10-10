@@ -1,0 +1,30 @@
+.toy-filter {
+  background-color: white;
+  border-radius: var(--radius);
+  padding: 1em;
+  margin-block: 1em;
+}
+
+.toy-filter form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1em;
+}
+
+.toy-filter .filter-field {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .2em;
+  font-size: .9em;
+}
+
+.toy-filter .filter-field.sort-dir {
+  flex-direction: row;
+  align-items: center;
+  padding-block-end: .5em;
+}
+
+.toy-filter select[multiple] {
+  height: 5.5em;
+}

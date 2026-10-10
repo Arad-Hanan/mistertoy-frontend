@@ -1,0 +1,14 @@
+.toy-index {
+  padding-block: 1em 2em;
+}
+
+.toy-index-header h2 {
+  margin: 0;
+}
+
+.loader,
+.no-toys {
+  text-align: center;
+  padding: 2em;
+  color: var(--gray2);
+}
