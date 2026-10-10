@@ -1,0 +1,14 @@
+.app-header {
+  background-color: var(--clr1);
+  color: white;
+  padding-block: .5em;
+}
+
+.app-header .logo h1 {
+  margin: 0;
+}
+
+.app-nav {
+  display: flex;
+  gap: 15px;
+}
