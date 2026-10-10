@@ -1,0 +1,30 @@
+.user-msg {
+  background-color: lightgray;
+  padding: 1em 2em;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: auto;
+  max-width: calc(100vw - 2em);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 1.1em;
+  z-index: 100;
+}
+
+.user-msg.success {
+  background-color: var(--clr1);
+}
+
+.user-msg.error {
+  background-color: var(--clr2);
+}
+
+.user-msg button {
+  font-size: .8em;
+  float: right;
+  margin-inline-start: 1em;
+  background: none;
+  border: none;
+  color: inherit;
+}
