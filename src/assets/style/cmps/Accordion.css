@@ -1,0 +1,59 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  max-width: 600px;
+}
+
+.accordion-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 4px rgb(0 0 0 / .08);
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em 1.2em;
+  border: none;
+  background-color: var(--clr1);
+  color: white;
+  font: inherit;
+  text-align: start;
+  transition: background-color .2s;
+}
+
+.accordion-title:hover {
+  background-color: #2f4c86;
+}
+
+.accordion-title .arrow {
+  transition: transform .3s;
+}
+
+.accordion-item.open .accordion-title .arrow {
+  transform: rotate(90deg);
+}
+
+/* Sliding animation - grid rows animate from 0fr to 1fr */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .35s ease;
+}
+
+.accordion-item.open .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+.accordion-inner > * {
+  margin: 0;
+  padding: 1em 1.2em;
+}
