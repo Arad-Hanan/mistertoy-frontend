@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { toyService } from '../services/toy.service.js'
 import { showErrorMsg } from '../services/event-bus.service.js'
 
+import { NicePopup } from '../cmps/NicePopup.jsx'
+import { Chat } from '../cmps/Chat.jsx'
+
 export function ToyDetails() {
     const [toy, setToy] = useState(null)
+    const [isChatOpen, setIsChatOpen] = useState(false)
     const { toyId } = useParams()
     const navigate = useNavigate()
 
@@ -22,6 +26,8 @@ export function ToyDetails() {
                 navigate('/toy')
             })
     }
+
+    const onCloseChat = useCallback(() => setIsChatOpen(false), [])
 
     if (!toy) return <div className="loader">Loading...</div>
 
@@ -47,6 +53,20 @@ export function ToyDetails() {
                     <Link to="/toy" className="btn btn-light">Back</Link>
                 </div>
             </div>
+
+            <button className="chat-btn" onClick={() => setIsChatOpen(true)} title="Chat with us">
+                💬
+            </button>
+
+            {isChatOpen &&
+                <NicePopup
+                    heading={`Ask us about ${toy.name}`}
+                    footing="Our support team usually answers in seconds"
+                    onClose={onCloseChat}
+                >
+                    <Chat />
+                </NicePopup>
+            }
         </section>
     )
 }

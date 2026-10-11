@@ -1,0 +1,39 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.chat-msgs {
+  height: 240px;
+  overflow-y: auto;
+  border: 1px solid var(--gray1);
+  border-radius: var(--radius);
+}
+
+.chat-msgs li {
+  padding: .4em .8em;
+}
+
+.chat-msgs li.mine {
+  background-color: var(--gray1);
+}
+
+.chat-msgs .from {
+  font-weight: bold;
+}
+
+.chat-msgs .no-msgs {
+  color: var(--gray2);
+  text-align: center;
+  padding: 2em;
+}
+
+.chat-form {
+  display: flex;
+  gap: .5em;
+}
+
+.chat-form input {
+  flex: 1;
+}

@@ -1,0 +1,52 @@
+.nice-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / .4);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+
+.nice-popup {
+  display: flex;
+  flex-direction: column;
+  width: min(92vw, 480px);
+  max-height: 85vh;
+  background-color: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgb(0 0 0 / .25);
+}
+
+.nice-popup > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr1);
+  color: white;
+  padding: .5em 1em;
+}
+
+.nice-popup > header h3 {
+  margin: 0;
+}
+
+.nice-popup > header .close-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2em;
+}
+
+.nice-popup > main {
+  flex: 1;
+  overflow: auto;
+  padding: 1em;
+}
+
+.nice-popup > footer {
+  padding: .5em 1em;
+  font-size: .85em;
+  color: var(--gray2);
+  border-top: 1px solid var(--gray1);
+}
