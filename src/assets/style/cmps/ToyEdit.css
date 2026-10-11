@@ -1,0 +1,32 @@
+.toy-edit {
+  max-width: 500px;
+  margin: 2em auto;
+  background-color: white;
+  border-radius: var(--radius);
+  padding: 1.5em 2em;
+}
+
+.toy-edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.toy-edit form > label:not(.in-stock) {
+  flex-direction: column;
+  align-items: stretch;
+  gap: .2em;
+}
+
+.toy-edit .labels-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em 1em;
+  border: 1px solid var(--gray2);
+  border-radius: var(--radius);
+}
+
+.toy-edit-actions {
+  display: flex;
+  gap: .5em;
+}

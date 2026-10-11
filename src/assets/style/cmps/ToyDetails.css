@@ -1,0 +1,61 @@
+.toy-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  background-color: white;
+  border-radius: var(--radius);
+  padding: 2em;
+  margin-block: 2em;
+}
+
+.toy-details > img {
+  width: 260px;
+  height: 260px;
+  object-fit: contain;
+  background-color: var(--clr1bg);
+  border-radius: var(--radius);
+}
+
+.toy-details .toy-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.toy-details .price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--clr1);
+}
+
+.toy-details .stock.in {
+  color: green;
+}
+
+.toy-details .stock.out {
+  color: var(--clr2);
+}
+
+.toy-details .labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4em;
+  margin-block-end: 1em;
+}
+
+.toy-details .labels li {
+  background-color: var(--clr1bg);
+  color: var(--clr1);
+  border-radius: 999px;
+  padding: .2em .8em;
+  font-size: .85em;
+}
+
+.toy-details .created-at {
+  color: var(--gray2);
+  font-size: .9em;
+}
+
+.toy-details-actions {
+  display: flex;
+  gap: .5em;
+}
