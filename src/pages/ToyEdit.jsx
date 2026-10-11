@@ -4,12 +4,14 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { toyService } from '../services/toy.service.js'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { saveToy } from '../store/actions/toy.actions.js'
+import { useConfirmTabClose } from '../hooks/useConfirmTabClose.js'
 
 export function ToyEdit() {
     const [toyToEdit, setToyToEdit] = useState(toyService.getEmptyToy())
     const { toyId } = useParams()
     const navigate = useNavigate()
     const labels = toyService.getLabels()
+    const [hasChanges, setHasChanges] = useConfirmTabClose()
 
     useEffect(() => {
         if (toyId) loadToy()
@@ -30,6 +32,7 @@ export function ToyEdit() {
         if (type === 'number') value = +value
         if (type === 'checkbox') value = checked
         setToyToEdit(prevToy => ({ ...prevToy, [field]: value }))
+        setHasChanges(true)
     }
 
     function onToggleLabel(label) {
@@ -39,6 +42,11 @@ export function ToyEdit() {
                 : [...prevToy.labels, label]
             return { ...prevToy, labels }
         })
+        setHasChanges(true)
+    }
+
+    function onCancel(ev) {
+        if (hasChanges && !confirm('You have unsaved changes, leave anyway?')) ev.preventDefault()
     }
 
     function onSaveToy(ev) {
@@ -47,6 +55,7 @@ export function ToyEdit() {
 
         saveToy(toyToEdit)
             .then(savedToy => {
+                setHasChanges(false)
                 showSuccessMsg(`Toy saved (${savedToy.name})`)
                 navigate('/toy')
             })
@@ -118,7 +127,7 @@ export function ToyEdit() {
 
                 <div className="toy-edit-actions">
                     <button className="btn">{toyToEdit._id ? 'Save' : 'Add'}</button>
-                    <Link to="/toy" className="btn btn-light">Cancel</Link>
+                    <Link to="/toy" className="btn btn-light" onClick={onCancel}>Cancel</Link>
                 </div>
             </form>
         </section>
