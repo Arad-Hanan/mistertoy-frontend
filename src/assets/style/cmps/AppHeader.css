@@ -10,5 +10,20 @@
 
 .app-nav {
   display: flex;
+  align-items: center;
   gap: 15px;
+}
+
+.online-status {
+  font-size: .8em;
+  padding: .15em .6em;
+  border-radius: 999px;
+}
+
+.online-status.online {
+  background-color: #2a9d8f;
+}
+
+.online-status.offline {
+  background-color: var(--clr2);
 }
